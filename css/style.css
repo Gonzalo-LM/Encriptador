@@ -1,0 +1,156 @@
+body{
+    background: rgb(198, 223, 241);
+}
+
+/*----------Main----------*/
+
+.logo{
+    margin: 50px auto;
+}
+
+.logo img{
+    width: 10%;
+}
+
+.principal{
+    margin: 50px auto;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    padding: 20px;
+    background: rgb(185, 206, 223);
+    flex-wrap: wrap;
+    min-width: 200px;
+}
+
+.parte_1{
+    text-align: center;
+    flex: 1;
+    padding: 25px;
+    min-width: 48%;
+}
+
+.parte_1 textarea{
+    width: 70%;
+    height: 600px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 150%;
+    max-width: 75%;
+    min-width: 60%;
+    background: none;
+    border: none;
+    text-transform: lowercase;
+}
+
+.parte_1 textarea:focus{
+    outline: none;
+}
+
+.botones .advertencia{
+    display: flex;
+    font-size: 18px;
+}
+
+.parte_1 .botones .advertencia img{
+    width: 20px;
+}
+
+.parte_1 .botones{
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.parte_1 .botones button{
+    margin: auto;
+    width: 30%;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 1pc;
+    padding: 10px 0;
+    background: black;
+    color: snow;
+    font-weight: bold;
+    min-width: 200px;
+}
+
+.parte_1 .botones .encriptar:hover{
+    background: blue;
+    color: snow;
+}
+
+.parte_1 .botones .desencriptar:hover{
+    background: yellow;
+    color: black;
+}
+
+.parte_1 .botones .limpiar:hover{
+    background: red;
+    color: snow;
+}
+
+.parte_2{
+    flex: 2;
+    text-align: center;
+    background: white;
+    border-radius: 1pc;
+    padding: 25px;
+    box-sizing: border-box;
+    min-width: 48%;
+}
+
+.parte_2 img{
+    max-width: 100%;
+}
+
+.parte_2 textarea{
+    width: 70%;
+    height: 600px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 150%;
+    border: none;
+    max-width: 75%;
+    min-width: 60%;
+    text-transform: lowercase;
+}
+
+.parte_2 textarea:focus{
+    outline: none;
+}
+
+.copiar{
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 1pc;
+    font-size: 30px;
+    font-weight: bold;
+    background: black;
+    color: snow;
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: 45%;
+}
+
+.copiar:hover{
+    background: green;
+}
+
+/*----------Footer----------*/
+
+footer{
+    text-align: center;
+    background: rgba(65, 206, 0, 0.678);
+    padding: 40px;
+}
+
+.copyright{
+    color: black;
+    font-size: 16px;
+    margin: 20px;
+    font-weight: bold;
+}

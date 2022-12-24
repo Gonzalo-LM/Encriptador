@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <img src="../imagenes/Logo@2x.png" alt="logo alura">
+        </div>
+        <div class="principal">
+            <div class="parte_1">
+                <div>
+                    <textarea id="mensaje" placeholder="Ingrese texto aquí..." autocomplete="off" onkeypress="return letrasMinusculas(event);"></textarea>
+                </div>
+                <div class="botones">
+                    <p class="advertencia"><img src="../imagenes/signo-de-exclamacion-en-un-circulo.png">Solo letras minusculas y sin acentos</p>
+                    <button class="encriptar" id="encriptar">Encriptar</button>
+                    <button class="desencriptar" id="desencriptar">Desencriptar</button>
+                    <button class="limpiar" id="limpiar">Limpiar</button>
+                </div>
+            </div>
+
+            <div class="parte_2">
+                <div>
+                    <img id="imagen" src="../imagenes/Muneco.jpg" alt="">
+                    <textarea id="mensajeE" readonly></textarea>
+                    <button class="copiar" id="copiar">Copiar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; Copyright Encriptador - 2022 realizado por Gonzalo-LM</p>
+    </footer>
+
+    <script src="../js/encriptacion.js"></script>
+</body>
+</html>
