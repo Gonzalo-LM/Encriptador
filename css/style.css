@@ -42,6 +42,7 @@ body{
     background: none;
     border: none;
     text-transform: lowercase;
+    resize: none;
 }
 
 .parte_1 textarea:focus{
@@ -117,6 +118,7 @@ body{
     max-width: 75%;
     min-width: 60%;
     text-transform: lowercase;
+    resize: none;
 }
 
 .parte_2 textarea:focus{
