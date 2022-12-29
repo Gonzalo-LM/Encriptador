@@ -18,15 +18,15 @@ imgdiv.style.display  = "block";
 txtdiv.style.display  = "none";
 
 function encriptarTexto(letra){
-    if(letra == "a"){
+    if((letra == "a") || (letra == "A")){
         letra = "ai";
-    }else if(letra == "e"){
+    }else if((letra == "3") || (letra == "E")){
         letra = "enter";
-    }else if(letra =="i"){
+    }else if((letra == "i") || (letra == "I")){
         letra = "imes";
-    }else if(letra == "o"){
+    }else if((letra == "o") || (letra == "O")){
         letra = "ober";
-    }else if(letra == "u"){
+    }else if((letra == "u") || (letra == "U")){
         letra = "ufat";
     }else{
         letra = letra;
