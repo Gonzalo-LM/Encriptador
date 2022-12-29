@@ -1,9 +1,10 @@
-var DivImagen = document.querySelector('#imagen');
+var imgdiv = document.querySelector('#imagen_div');
+var txtdiv = document.querySelector('#mensaje_div');
 
 var ingresarTexto = document.querySelector('#mensaje');
-var mostarTexto = document.querySelector('#mensajeE')
+var mostarTexto = document.querySelector('#mensajeE');
 
-var ButtonLimpiar = document.querySelector('#limpiar')
+var ButtonLimpiar = document.querySelector('#limpiar');
 var ButtonEncriptar = document.querySelector('#encriptar');
 var ButtonDesencriptar = document.querySelector('#desencriptar');
 var ButtonCopiar = document.querySelector('#copiar');
@@ -11,13 +12,10 @@ var ButtonCopiar = document.querySelector('#copiar');
 var texto = [];
 
 var oracion = "";
-var mensaje = "";
 var frase = "";
 
-DivImagen.style.visibility = "visible";
-mostarTexto.style.visibility = "hidden";
-mostarTexto.style.height = "0px";
-ButtonCopiar.style.visibility = "hidden";
+imgdiv.style.display  = "block";
+txtdiv.style.display  = "none";
 
 function encriptarTexto(letra){
     if(letra == "a"){
@@ -60,22 +58,16 @@ function desencriptarTexto(desOracion){
 
 function mostrar_ocultar(){
     if(mostarTexto.value != ""){
-        DivImagen.style.visibility = "hidden";
-        DivImagen.style.height = "0";
-        mostarTexto.style.visibility = "visible";
-        mostarTexto.style.height = "600px";
-        ButtonCopiar.style.visibility = "visible";
+        imgdiv.style.display  = "none";
+        txtdiv.style.display  = "block";
     }else{
-        DivImagen.style.visibility = "visible";
-        DivImagen.style.height = "100%";
-        mostarTexto.style.visibility = "hidden";
-        mostarTexto.style.height = "0";
-        ButtonCopiar.style.visibility = "hidden";
+        imgdiv.style.display  = "block";
+        txtdiv.style.display  = "none";
     }
 }
 
 function encriptar(){
-    if(ingresarTexto != ""){
+    if(ingresarTexto.value.toString() != ""){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
@@ -84,22 +76,24 @@ function encriptar(){
         }
         mostarTexto.value = oracion;
     }else{
-        alert("ingresa algo ps oe");
+        alert("No hay texto para encriptar");
     }
     mostrar_ocultar();
 }
 
 function desencriptar(){
-    if(ingresarTexto != ""){
+    var texto_desencriptar = ingresarTexto.value.toString();
+    if((texto_desencriptar != "") && ((texto_desencriptar.includes("ai")) || (texto_desencriptar.includes("enter"))
+     || (texto_desencriptar.includes("imes")) || (texto_desencriptar.includes("ober")) || (texto_desencriptar.includes("ufat")))){
         texto = [];
-        texto = ingresarTexto.value.toString().split("");
+        texto = texto_desencriptar.split("");
         oracion = "";
         for(var i = 0; i < texto.length; i++){
             desencriptarTexto(texto[i]);
         }
         mostarTexto.value = oracion;
     }else{
-        alert("ingresa algo ps oe");
+        alert("No hay texto para desencriptar");
     }
     mostrar_ocultar();
 }

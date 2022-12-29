@@ -1,5 +1,5 @@
 body{
-    background: rgb(198, 223, 241);
+    background: rgb(156, 240, 219);
 }
 
 /*----------Main----------*/
@@ -18,7 +18,7 @@ body{
     border: 1px solid black;
     display: flex;
     padding: 20px;
-    background: rgb(185, 206, 223);
+    background: rgba(255, 255, 255, 0.39);
     flex-wrap: wrap;
     min-width: 200px;
 }
@@ -125,6 +125,10 @@ body{
     outline: none;
 }
 
+#imagen_div{
+    margin: 20% 0;
+}
+
 .copiar{
     margin: auto;
     border: 2px solid black;
@@ -146,12 +150,12 @@ body{
 
 footer{
     text-align: center;
-    background: rgba(65, 206, 0, 0.678);
+    background: rgba(0, 0, 0, 0.521);
     padding: 40px;
 }
 
 .copyright{
-    color: black;
+    color: snow;
     font-size: 16px;
     margin: 20px;
     font-weight: bold;
