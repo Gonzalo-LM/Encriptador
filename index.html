@@ -16,7 +16,7 @@
         <div class="principal">
             <div class="parte_1">
                 <div>
-                    <textarea id="mensaje" placeholder="Ingrese texto aquí..." autocomplete="off" onkeypress="return letrasMinusculas(event);"></textarea>
+                    <textarea pattern="^[a-z]+$" id="mensaje" placeholder="Ingrese texto aquí..." autocomplete="off" onkeypress="return letrasMinusculas(event);"></textarea>
                 </div>
                 <div class="botones">
                     <p class="advertencia"><img src="imagenes/signo-de-exclamacion-en-un-circulo.png">Solo letras minusculas y sin acentos</p>
