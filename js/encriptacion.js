@@ -99,8 +99,8 @@ function desencriptar(){
 }
 
 function copiarTexto(){
-    mostarTexto.select();
-    document.execCommand("copy");
+    texto_copiar = mostarTexto.value.toString();
+    navigator.clipboard.writeText(texto_copiar).then();
 }
 
 function limpiarTexto(){
