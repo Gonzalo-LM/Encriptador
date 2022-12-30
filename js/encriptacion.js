@@ -140,3 +140,4 @@ ButtonLimpiar.onclick = limpiarTexto;
 ButtonEncriptar.onclick = encriptar;
 ButtonDesencriptar.onclick = desencriptar;
 ButtonCopiar.onclick = copiarTexto;
+ingresarTexto.onkeypress = letrasMinusculas;
