@@ -112,8 +112,10 @@ function limpiarTexto(){
 function letrasMinusculas(x){
     key = x.keyCode || x.which;
     tecla = String.fromCharCode(key).toString();
-    letras = "abcdefghijklmnñopqrstuvwxyz";
-
+    letras = [];//"abcdefghijklmnñopqrstuvwxyz";
+    for(var l = 97; l < 123; l++){
+        letras.push(l);
+    }
     especiales = [32, 8, 13];
     tecla_especial = false;
     for(var i in especiales){
@@ -122,7 +124,13 @@ function letrasMinusculas(x){
             break;
         }
     }
-    if(letras.indexOf(tecla) == -1 && !tecla_especial){
+    for(var a in letras){
+        if(key == letras[a]){
+            tecla_especial = true;
+            break;
+        }
+    }
+    if(!tecla_especial){
         alert("Ingrese solo letras minusculas y sin acentos.");
         return false;
     }
