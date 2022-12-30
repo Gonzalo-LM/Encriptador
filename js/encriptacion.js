@@ -67,7 +67,7 @@ function mostrar_ocultar(){
 }
 
 function encriptar(){
-    if((ingresarTexto.value.toString() != "") && (tecla_especial)){
+    if(ingresarTexto.value.toString() != ""){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
