@@ -70,7 +70,7 @@ function mostrar_ocultar(){
 
 function encriptar(){
     let texto_encriptar = ingresarTexto.value.toString();
-    if((texto_encriptar != "") && (texto_encriptar.match(minuscula)) || (texto_encriptar.match(regSign))){
+    if(texto_encriptar != ""){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
@@ -78,10 +78,8 @@ function encriptar(){
             encriptarTexto(texto[i]);
         }
         mostarTexto.value = oracion;
-    }else if((texto_encriptar == "")){
-        alert("No hay texto para encriptar");
     }else{
-        alert("solo letras minusculas y sin acentos o simbolos");
+        alert("No hay texto para encriptar");
     }
     mostrar_ocultar();
 }
