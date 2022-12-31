@@ -67,7 +67,7 @@ function mostrar_ocultar(){
 }
 
 function encriptar(){
-    if(ingresarTexto.value.toString() != ""){
+    if((ingresarTexto.value.toString() != "") && (val)){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
@@ -130,9 +130,13 @@ function letrasMinusculas(x){
             break;
         }
     }
+    val = true;
     if(!tecla_especial){
         alert("Ingrese solo letras minusculas y sin acentos.");
+        val = false;
         return false;
+    }else{
+        val = true;
     }
 }
 
