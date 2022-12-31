@@ -159,8 +159,8 @@ function desencriptar(){
         }
         mostarTexto.value = oracion;
     }else if(texto_desencriptar == ""){
-        alert("No hay texto para encriptar");
-    }else{
+        alert("No hay texto en clave para desencriptar");
+    }else if(!valor){
         alert("no se aceptan simbolos ni letras con acentos")
     }
     mostrar_ocultar();
