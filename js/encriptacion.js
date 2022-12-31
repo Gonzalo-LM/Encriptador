@@ -68,6 +68,7 @@ function mostrar_ocultar(){
 }
 
 function validacion(validar){
+    valor = true;
     comprobar = [];
     comprobar2 = [];
     comprobar3 = [];
