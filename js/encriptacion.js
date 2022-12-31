@@ -137,16 +137,20 @@ function encriptar(){
             encriptarTexto(texto[i]);
         }
         mostarTexto.value = oracion;
-    }else{
+    }else if(texto_encriptar == ""){
         alert("No hay texto para encriptar");
+    }else{
+        alert("no se aceptan simbolos ni letras con acentos")
     }
     mostrar_ocultar();
 }
 
 function desencriptar(){
     let texto_desencriptar = ingresarTexto.value.toString();
+    validacion(texto_desencriptar)
+
     if((texto_desencriptar != "") && ((texto_desencriptar.includes("ai")) || (texto_desencriptar.includes("enter"))
-     || (texto_desencriptar.includes("imes")) || (texto_desencriptar.includes("ober")) || (texto_desencriptar.includes("ufat")))){
+     || (texto_desencriptar.includes("imes")) || (texto_desencriptar.includes("ober")) || (texto_desencriptar.includes("ufat"))) && (valor)){
         texto = [];
         texto = texto_desencriptar.split("");
         oracion = "";
@@ -154,8 +158,10 @@ function desencriptar(){
             desencriptarTexto(texto[i]);
         }
         mostarTexto.value = oracion;
+    }else if(texto_desencriptar == ""){
+        alert("No hay texto para encriptar");
     }else{
-        alert("No hay texto para desencriptar");
+        alert("no se aceptan simbolos ni letras con acentos")
     }
     mostrar_ocultar();
 }
