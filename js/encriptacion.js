@@ -13,8 +13,7 @@ var texto = [];
 
 var oracion = "";
 var frase = "";
-const minuscula = /^[a-z\s]+$/g
-const regSign = /^[a-z\s¡!,.;¿?]+$/g
+var valor = true;
 
 imgdiv.style.display  = "block";
 txtdiv.style.display  = "none";
@@ -68,9 +67,68 @@ function mostrar_ocultar(){
     }
 }
 
+function validacion(validar){
+    comprobar = [];
+    comprobar2 = [];
+    comprobar3 = [];
+    comprobar4 = [];
+    comprobar5 = [];
+    comprobar6 = [];
+    comprobar7 = [];
+    for(var r = 0; r < 8; r++){
+        comprobar.push(String.fromCharCode(r));
+    }
+    for(var t = 9; t < 13; t++){
+        comprobar2.push(String.fromCharCode(t));
+    }
+    for(var y = 14; y < 32; y++){
+        comprobar3.push(String.fromCharCode(y));
+    }
+    for(var u = 33; u < 65; u++){
+        comprobar4.push(String.fromCharCode(u));
+    }
+    for(var i = 91; i < 96; i++){
+        comprobar5.push(String.fromCharCode(i));
+    }
+    for(var o = 123; o < 164; o++){
+        comprobar6.push(String.fromCharCode(o));
+    }
+    for(var p = 166; p < 255; p++){
+        comprobar7.push(String.fromCharCode(p));
+    }
+
+    for(var x = 0; x < validar.length; x++){
+        palabra = validar.split("");
+        if(comprobar.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar2.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar3.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar4.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar5.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar6.includes(palabra[x])){
+            valor = false;
+            break;
+        }else if(comprobar7.includes(palabra[x])){
+            valor = false;
+            break;
+        }
+    }
+}
+
 function encriptar(){
     let texto_encriptar = ingresarTexto.value.toString();
-    if(texto_encriptar != ""){
+    validacion(texto_encriptar)
+
+    if((texto_encriptar != "") && (valor)){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
