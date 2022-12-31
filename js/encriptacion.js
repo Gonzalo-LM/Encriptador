@@ -13,6 +13,8 @@ var texto = [];
 
 var oracion = "";
 var frase = "";
+const minuscula = /^[a-z\s]+$/g
+const regSign = /^[a-z\s¡!,.;¿?]+$/g
 
 imgdiv.style.display  = "block";
 txtdiv.style.display  = "none";
@@ -67,7 +69,8 @@ function mostrar_ocultar(){
 }
 
 function encriptar(){
-    if((ingresarTexto.value.toString() != "") && (val)){
+    let texto_encriptar = ingresarTexto.value.toString();
+    if((texto_encriptar != "") && (texto_encriptar.match(minuscula)) || (texto_encriptar.match(regSign))){
         texto = [];
         texto = ingresarTexto.value.toString().split("");
         oracion = "";
@@ -75,14 +78,16 @@ function encriptar(){
             encriptarTexto(texto[i]);
         }
         mostarTexto.value = oracion;
-    }else{
+    }else if((texto_encriptar == "")){
         alert("No hay texto para encriptar");
+    }else{
+        alert("solo letras minusculas y sin acentos o simbolos");
     }
     mostrar_ocultar();
 }
 
 function desencriptar(){
-    var texto_desencriptar = ingresarTexto.value.toString();
+    let texto_desencriptar = ingresarTexto.value.toString();
     if((texto_desencriptar != "") && ((texto_desencriptar.includes("ai")) || (texto_desencriptar.includes("enter"))
      || (texto_desencriptar.includes("imes")) || (texto_desencriptar.includes("ober")) || (texto_desencriptar.includes("ufat")))){
         texto = [];
@@ -130,13 +135,9 @@ function letrasMinusculas(x){
             break;
         }
     }
-    val = true;
     if(!tecla_especial){
         alert("Ingrese solo letras minusculas y sin acentos.");
-        val = false;
         return false;
-    }else{
-        val = true;
     }
 }
 
