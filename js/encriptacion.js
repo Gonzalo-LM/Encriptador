@@ -19,15 +19,15 @@ imgdiv.style.display  = "block";
 txtdiv.style.display  = "none";
 
 function encriptarTexto(letra){
-    if((letra == "a") || (letra == "A")){
+    if((letra == "a")){
         letra = "ai";
-    }else if((letra == "3") || (letra == "E")){
+    }else if(letra == "3"){
         letra = "enter";
-    }else if((letra == "i") || (letra == "I")){
+    }else if(letra == "i"){
         letra = "imes";
-    }else if((letra == "o") || (letra == "O")){
+    }else if(letra == "o"){
         letra = "ober";
-    }else if((letra == "u") || (letra == "U")){
+    }else if(letra == "u"){
         letra = "ufat";
     }else{
         letra = letra;
@@ -85,17 +85,14 @@ function validacion(validar){
     for(var y = 14; y < 32; y++){
         comprobar3.push(String.fromCharCode(y));
     }
-    for(var u = 33; u < 65; u++){
+    for(var u = 33; u < 96; u++){
         comprobar4.push(String.fromCharCode(u));
     }
-    for(var i = 91; i < 96; i++){
-        comprobar5.push(String.fromCharCode(i));
-    }
     for(var o = 123; o < 164; o++){
-        comprobar6.push(String.fromCharCode(o));
+        comprobar5.push(String.fromCharCode(o));
     }
     for(var p = 166; p < 255; p++){
-        comprobar7.push(String.fromCharCode(p));
+        comprobar6.push(String.fromCharCode(p));
     }
 
     for(var x = 0; x < validar.length; x++){
@@ -118,20 +115,17 @@ function validacion(validar){
         }else if(comprobar6.includes(palabra[x])){
             valor = false;
             break;
-        }else if(comprobar7.includes(palabra[x])){
-            valor = false;
-            break;
         }
     }
 }
 
 function encriptar(){
-    let texto_encriptar = ingresarTexto.value.toString();
+    let texto_encriptar = ingresarTexto.value.toLowerCase();
     validacion(texto_encriptar)
 
     if((texto_encriptar != "") && (valor)){
         texto = [];
-        texto = ingresarTexto.value.toString().split("");
+        texto = texto_encriptar.split("");
         oracion = "";
         for(var i = 0; i < texto.length; i++){
             encriptarTexto(texto[i]);
@@ -146,7 +140,7 @@ function encriptar(){
 }
 
 function desencriptar(){
-    let texto_desencriptar = ingresarTexto.value.toString();
+    let texto_desencriptar = ingresarTexto.value.toLowerCase();
     validacion(texto_desencriptar)
 
     if((texto_desencriptar != "") && ((texto_desencriptar.includes("ai")) || (texto_desencriptar.includes("enter"))
@@ -167,7 +161,7 @@ function desencriptar(){
 }
 
 function copiarTexto(){
-    texto_copiar = mostarTexto.value.toString();
+    texto_copiar = mostarTexto.value;
     navigator.clipboard.writeText(texto_copiar).then();
 }
 
