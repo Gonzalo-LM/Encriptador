@@ -9,6 +9,8 @@ var ButtonEncriptar = document.querySelector('#encriptar');
 var ButtonDesencriptar = document.querySelector('#desencriptar');
 var ButtonCopiar = document.querySelector('#copiar');
 
+ingresarTexto.focus();
+
 var texto = [];
 
 var oracion = "";
@@ -142,12 +144,14 @@ function desencriptar(){
 function copiarTexto(){
     texto_copiar = mostarTexto.value;
     navigator.clipboard.writeText(texto_copiar).then();
+    alert("Texto copiado")
 }
 
 function limpiarTexto(){
     ingresarTexto.value = "";
     mostarTexto.value = "";
     mostrar_ocultar();
+    ingresarTexto.focus();
 }
 
 function letrasMinusculas(x){
