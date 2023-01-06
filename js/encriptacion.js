@@ -21,7 +21,7 @@ txtdiv.style.display  = "none";
 function encriptarTexto(letra){
     if((letra == "a")){
         letra = "ai";
-    }else if(letra == "3"){
+    }else if(letra == "e"){
         letra = "enter";
     }else if(letra == "i"){
         letra = "imes";
@@ -70,49 +70,28 @@ function mostrar_ocultar(){
 function validacion(validar){
     valor = true;
     comprobar = [];
-    comprobar2 = [];
-    comprobar3 = [];
-    comprobar4 = [];
-    comprobar5 = [];
-    comprobar6 = [];
-    comprobar7 = [];
     for(var r = 0; r < 8; r++){
         comprobar.push(String.fromCharCode(r));
     }
     for(var t = 9; t < 13; t++){
-        comprobar2.push(String.fromCharCode(t));
+        comprobar.push(String.fromCharCode(t));
     }
     for(var y = 14; y < 32; y++){
-        comprobar3.push(String.fromCharCode(y));
+        comprobar.push(String.fromCharCode(y));
     }
     for(var u = 33; u < 96; u++){
-        comprobar4.push(String.fromCharCode(u));
+        comprobar.push(String.fromCharCode(u));
     }
     for(var o = 123; o < 164; o++){
-        comprobar5.push(String.fromCharCode(o));
+        comprobar.push(String.fromCharCode(o));
     }
     for(var p = 166; p < 255; p++){
-        comprobar6.push(String.fromCharCode(p));
+        comprobar.push(String.fromCharCode(p));
     }
 
     for(var x = 0; x < validar.length; x++){
         palabra = validar.split("");
         if(comprobar.includes(palabra[x])){
-            valor = false;
-            break;
-        }else if(comprobar2.includes(palabra[x])){
-            valor = false;
-            break;
-        }else if(comprobar3.includes(palabra[x])){
-            valor = false;
-            break;
-        }else if(comprobar4.includes(palabra[x])){
-            valor = false;
-            break;
-        }else if(comprobar5.includes(palabra[x])){
-            valor = false;
-            break;
-        }else if(comprobar6.includes(palabra[x])){
             valor = false;
             break;
         }
