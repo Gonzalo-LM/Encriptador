@@ -143,7 +143,7 @@ function desencriptar(){
 
 function copiarTexto(){
     texto_copiar = mostarTexto.value;
-    navigator.clipboard.writeText(texto_copiar).then();
+    navigator.clipboard.writeText(texto_copiar);
     alert("Texto copiado")
 }
 
