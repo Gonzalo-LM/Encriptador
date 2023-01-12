@@ -110,10 +110,6 @@ body{
     min-width: 48%;
 }
 
-.parte_2 img{
-    max-width: 100%;
-}
-
 .parte_2 textarea{
     width: 70%;
     height: 600px;
@@ -133,7 +129,21 @@ body{
 }
 
 #imagen_div{
+    flex-wrap: wrap;
+    width: 100%;
     margin: 20% 0;
+}
+
+.parte_2 img{
+    width: 50%;
+}
+
+.parte_2 .muñeco{
+    flex: 1;
+}
+
+.parte_2 .mensaje_muñeco{
+    flex: 2;
 }
 
 .copiar{
